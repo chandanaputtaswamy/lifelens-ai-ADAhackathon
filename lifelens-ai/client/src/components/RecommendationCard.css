@@ -1,0 +1,154 @@
+/* ───────────────────────────────────────────────
+   RecommendationCard Styles
+   Four color themes based on recommendation type:
+   - relax       → soft lavender/purple tones
+   - rest        → calm neutral beige/blue tones
+   - productivity → bright energetic yellow/green
+   - balanced    → clean grey/teal neutral tones
+─────────────────────────────────────────────── */
+
+.recommendation-card {
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-top: 32px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    animation: slideUp 0.5s ease forwards;
+    transition: transform 0.2s ease;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-4px);
+}
+
+/* ── Type: Relax ── soft lavender */
+.recommendation-card--relax {
+    background: linear-gradient(135deg, #ede9fe, #f5f3ff);
+    border-left: 5px solid #7c3aed;
+    color: #3b1f6b;
+}
+.recommendation-card--relax .rec-card__badge {
+    background: #7c3aed;
+    color: #fff;
+}
+.recommendation-card--relax .rec-card__reason {
+    background: rgba(124, 58, 237, 0.08);
+    border-radius: 8px;
+    padding: 12px 16px;
+}
+
+/* ── Type: Rest ── calm blue-grey */
+.recommendation-card--rest {
+    background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
+    border-left: 5px solid #0369a1;
+    color: #0c3250;
+}
+.recommendation-card--rest .rec-card__badge {
+    background: #0369a1;
+    color: #fff;
+}
+.recommendation-card--rest .rec-card__reason {
+    background: rgba(3, 105, 161, 0.08);
+    border-radius: 8px;
+    padding: 12px 16px;
+}
+
+/* ── Type: Productivity ── bright amber/green */
+.recommendation-card--productivity {
+    background: linear-gradient(135deg, #fef9c3, #f0fdf4);
+    border-left: 5px solid #16a34a;
+    color: #14401f;
+}
+.recommendation-card--productivity .rec-card__badge {
+    background: #16a34a;
+    color: #fff;
+}
+.recommendation-card--productivity .rec-card__reason {
+    background: rgba(22, 163, 74, 0.08);
+    border-radius: 8px;
+    padding: 12px 16px;
+}
+
+/* ── Type: Balanced ── clean teal neutral */
+.recommendation-card--balanced {
+    background: linear-gradient(135deg, #f0fdfa, #ecfdf5);
+    border-left: 5px solid #0d9488;
+    color: #134e4a;
+}
+.recommendation-card--balanced .rec-card__badge {
+    background: #0d9488;
+    color: #fff;
+}
+.recommendation-card--balanced .rec-card__reason {
+    background: rgba(13, 148, 136, 0.08);
+    border-radius: 8px;
+    padding: 12px 16px;
+}
+
+/* ── Internals ── */
+.rec-card__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.rec-card__icon {
+    font-size: 2rem;
+}
+
+.rec-card__badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 999px;
+}
+
+.rec-card__context {
+    font-size: 0.9rem;
+    opacity: 0.75;
+    margin-bottom: 8px;
+}
+
+.rec-card__recommendation {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 16px;
+    line-height: 1.4;
+}
+
+.rec-card__divider {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 16px 0;
+}
+
+.rec-card__reason-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    display: block;
+    margin-bottom: 6px;
+    opacity: 0.7;
+}
+
+.rec-card__reason p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+/* Entry animation */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
